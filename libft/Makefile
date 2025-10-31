@@ -101,18 +101,17 @@ OBJECTS = $(SOURCES:.c=.o)
 
 $(NAME) : $(OBJECTS)
 	@ar crs $(NAME) $^
-	@echo Finished libft compile
+	@echo Libft successfully compiled
 
 %.o : %.c
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJECTS)
-	@echo Finished libft cleaning
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo Finished libft full clean
+	@echo Removed libft.a
 
 re: fclean all
 
