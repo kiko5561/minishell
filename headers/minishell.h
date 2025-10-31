@@ -6,7 +6,7 @@
 /*   By: wshou-xi <wshou-xi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:47:07 by wshou-xi          #+#    #+#             */
-/*   Updated: 2025/10/31 10:53:13 by wshou-xi         ###   ########.fr       */
+/*   Updated: 2025/10/31 16:54:08 by wshou-xi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <sys/types.h>
 # include <fcntl.h>
 # include "libft.h"
+# include "tokenizing.h"
 
 
 #endif
