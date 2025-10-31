@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wshou-xi <wshou-xi@student.42.fr>          +#+  +:+       +#+         #
+#    By: wshou-xi <wshou-xi@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 10:47:03 by wshou-xi          #+#    #+#              #
-#    Updated: 2025/10/31 11:50:32 by wshou-xi         ###   ########.fr        #
+#    Updated: 2025/10/31 21:06:14 by wshou-xi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,35 +15,42 @@ CFLAGS = -Wall -Werror -Wextra -I./headers -I./libft/includes
 LIB = -lreadline -lhistory -Llibft -lft
 RM = rm -rf
 
-OBJDIR = obj
-OBJS = $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
+MAINDIR = src
+MAINFILES = main.c
+MAIN = $(addprefix $(MAINDIR)/, $(MAINFILES))
 
-SRCDIR = src
-SRCFILES = main.c
-SRC = $(addprefix $(SRCDIR)/, $(SRCFILES))
+TOKENDIR = tokenizer
+TOKENFILES = tokenizer.c
+TOKEN = $(addprefix $(TOKENDIR)/, $(TOKENFILES))
+
+SRC = $(MAIN) $(TOKEN)
+OBJDIR = obj
+OBJS = $(SRC:%.c=$(OBJDIR)/%.o)
+
+VPATH = $(MAINDIR) $(TOKENDIR)
 
 NAME = minishell
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@$(MAKE) -s -C libft
-	@$(CC) $(CFLAGS) $(SRC) $(LIB) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
 	@echo Minishell successfully compiled
-
-all: $(NAME)
 
 clean:
 	@$(MAKE) -s -C libft clean
-	@rm -rf $(OBJDIR)
+	@$(RM) $(OBJDIR)
 
 fclean: clean
-	@$(RM) $(NAME)
 	@$(MAKE) -s -C libft fclean
-	@echo successfully full cleaned
+	@$(RM) $(NAME)
+	@echo Successfully full cleaned
 
 re: fclean all
+
+all: $(NAME)
 
 .PHONY: all clean fclean re
