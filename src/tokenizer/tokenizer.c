@@ -3,39 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   tokenizer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wshou-xi <wshou-xi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wshou-xi <wshou-xi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:41:12 by wshou-xi          #+#    #+#             */
-/*   Updated: 2025/10/31 18:05:48 by wshou-xi         ###   ########.fr       */
+/*   Updated: 2025/11/01 13:56:59 by wshou-xi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokenizing.h"
 
-int	count_key(char *str)
-{
-	int	i;
-	int	j;
-	int	count;
 
-	if (!str)
-		return (-1);
-	i = 0;
-	j = 0;
-	count = 0;
-	while (str[i])
-	{
-		while (j < 8)
-		{
-			if (str[i] != METACHARACTERS[j])
-				j++;
-			else
-				count++;
-		}
-		j = 0;
-		i++;
-	}
-	printf("count is %d\n", count);
-	return (count);
-}
 
