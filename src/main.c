@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wshou-xi <wshou-xi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wshou-xi <wshou-xi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:50:10 by wshou-xi          #+#    #+#             */
-/*   Updated: 2025/10/31 18:05:06 by wshou-xi         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:02:14 by wshou-xi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int	main()
 
 	while (1)
 	{
-		line = readline("Line here: ");
-		printf("line is: %s\n", line);
-		printf("number of token is: %d\n", count_key(line));
+		line = readline(" ");
+		tokenizer(line);
 	}
 	return (0);
 }

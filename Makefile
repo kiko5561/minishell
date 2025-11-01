@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wshou-xi <wshou-xi@student.42.fr>          +#+  +:+       +#+         #
+#    By: wshou-xi <wshou-xi@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 10:47:03 by wshou-xi          #+#    #+#              #
-#    Updated: 2025/10/31 17:51:32 by wshou-xi         ###   ########.fr        #
+#    Updated: 2025/11/01 16:59:56 by wshou-xi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MAINFILES = main.c
 MAIN = $(addprefix $(MAINDIR)/, $(MAINFILES))
 
 TOKENDIR = tokenizer
-TOKENFILES = tokenizer.c
+TOKENFILES = tokenizer.c token_utils.c
 TOKEN = $(addprefix $(TOKENDIR)/, $(TOKENFILES))
 
 SRC = $(MAIN) $(TOKEN)
